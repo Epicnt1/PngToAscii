@@ -84,7 +84,7 @@ public class PngToAscii {
         System.out.println("Enter chunk size:");
         int chunkSize = scan.nextInt();
         scan.close();
-        System.setOut(new PrintStream("Out.txt"));
+        System.setOut(new PrintStream(System.getProperty("user.home") + "\\Downloads\\Out.txt"));
         BufferedImage newImage = ImageIO.read(new File(filepath));
         int[][] data = readImageToArray(newImage);
         printArrayInAscii(data, chunkSize);
