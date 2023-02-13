@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class ImageToAscii {
+public class PngToAscii {
 
     private static int[][] readImageToArray(BufferedImage image) {
 
@@ -80,11 +80,11 @@ public class ImageToAscii {
     public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter file path:");
-        String filepath = "C:\\Users\\Arthur\\Downloads\\" + scan.nextLine();
+        String filepath = scan.nextLine();
         System.out.println("Enter chunk size:");
         int chunkSize = scan.nextInt();
         scan.close();
-        System.setOut(new PrintStream("C:\\Users\\Arthur\\Downloads\\Out.txt"));
+        System.setOut(new PrintStream("Out.txt"));
         BufferedImage newImage = ImageIO.read(new File(filepath));
         int[][] data = readImageToArray(newImage);
         printArrayInAscii(data, chunkSize);
